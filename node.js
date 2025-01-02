@@ -10,6 +10,7 @@ let data=[
         "State",
         "Hooks (e.g., useEffect())",
         "Dynamic rendering"
+
     ],
     [
         "Official web page (react.dev)",
@@ -25,6 +26,8 @@ let related = document.querySelector(".related");
 let textArea = document.querySelector(".textArea");
 let ul = document.querySelector(".unorederList");
 let btn = document.querySelectorAll(".btn");
+let body = document.querySelector("body")
+let modeBtn = document.querySelector(".modeBtn")
 
 
 why.addEventListener("click",()=>{
@@ -63,6 +66,9 @@ related.addEventListener("click",()=>{
         let li = document.createElement("li");
         li.innerHTML = `${item}`
       ul.append(li) 
+
+ 
+
     })
 })
 
@@ -72,3 +78,23 @@ let removeClassList =()=>{
         item.classList.remove("active")
     })
 }
+let colour = "light";
+
+modeBtn.addEventListener("click",()=>{
+   
+     if(colour ==="dark"){
+        colour ="lite"
+body.classList.add("lite");
+body.classList.remove("dark")
+     }else{
+         colour ="dark";
+         body.classList.add("dark");
+         body.classList.remove("lite")
+        
+        
+     }
+        
+console.log(colour)
+
+
+})
